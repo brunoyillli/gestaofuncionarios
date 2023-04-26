@@ -10,13 +10,13 @@ import io.swagger.v3.oas.models.info.Info;
 @Configuration
 public class OpenApiConfig {
 
-	@Bean
-    public OpenAPI customOpenAPI() {
+    @Bean
+    OpenAPI customOpenAPI() {
         return new OpenAPI()
                 .components(new Components())
                 .info(new Info()
-                		.title("Sistema de Gestão de Funcionários API")
-                		.description("API do Sistema de Gestão de Funcionários")
-                		.version("1.0.0"));
+                        .title("Sistema de Gestão de Funcionários API")
+                        .description("API do Sistema de Gestão de Funcionários")
+                        .version("1.0.0"));
     }
 }

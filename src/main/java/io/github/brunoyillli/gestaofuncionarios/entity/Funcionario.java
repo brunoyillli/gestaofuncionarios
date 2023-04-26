@@ -31,7 +31,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@Table(name = "funcionario")
+@Table(name = "TB_FUNCIONARIO", schema = "SGF")
 @Schema(description = "Entidade que representa um funcionário")
 public class Funcionario {
 
