@@ -12,26 +12,19 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import io.github.brunoyillli.gestaofuncionarios.exception.ErrorMessage;
 import io.github.brunoyillli.gestaofuncionarios.exception.FuncionarioException;
-import jakarta.persistence.EntityNotFoundException;
 
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {
     @ExceptionHandler(NullPointerException.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
 	public ErrorMessage handleNullPointerException(NullPointerException e) {
-		return new ErrorMessage("Erro interno no servidor", HttpStatus.INTERNAL_SERVER_ERROR.value());
+		return new ErrorMessage(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value());
 	}
 
 	@ExceptionHandler(IllegalArgumentException.class)
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
 	public ErrorMessage handleIllegalArgumentException(IllegalArgumentException e) {
-		return new ErrorMessage("Requisição inválida", HttpStatus.BAD_REQUEST.value());
-	}
-
-	@ExceptionHandler(EntityNotFoundException.class)
-	@ResponseStatus(HttpStatus.NOT_FOUND)
-	public ErrorMessage handleEntityNotFoundException(EntityNotFoundException e) {
-		return new ErrorMessage("Entidade não encontrada", HttpStatus.NOT_FOUND.value());
+		return new ErrorMessage(e.getMessage(), HttpStatus.BAD_REQUEST.value());
 	}
 
 	@ExceptionHandler(FuncionarioException.class)

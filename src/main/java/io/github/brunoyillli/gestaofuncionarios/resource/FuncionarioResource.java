@@ -61,7 +61,7 @@ public class FuncionarioResource {
 	@DeleteMapping("{id}")
 	@Operation(summary = "Excluir funcionário existente")
 	public ResponseEntity<Void> delete(@PathVariable Integer id) {
-		funcionarioService.deletar(id);
+		funcionarioService.delete(id);
 		return ResponseEntity.noContent().build();
 	}
 

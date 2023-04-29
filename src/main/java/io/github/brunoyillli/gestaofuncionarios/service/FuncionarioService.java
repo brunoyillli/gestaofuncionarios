@@ -14,5 +14,5 @@ public interface FuncionarioService {
 
 	Funcionario update(Integer id, Funcionario funcionario);
 
-	void deletar(Integer id);
+	void delete(Integer id);
 }
