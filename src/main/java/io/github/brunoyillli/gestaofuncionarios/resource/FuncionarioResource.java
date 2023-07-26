@@ -38,7 +38,7 @@ public class FuncionarioResource {
 	}
 	
 	@GetMapping
-	@Operation(summary = "Obter detalhes dos funcionários existentes")
+	@Operation(summary = "Buscar todos funcionários existentes")
 	public ResponseEntity<List<Funcionario>> findAll() {
 		List<Funcionario> funcionarios = funcionarioService.findAll();
 		return new ResponseEntity<List<Funcionario>>(funcionarios, HttpStatus.OK);
